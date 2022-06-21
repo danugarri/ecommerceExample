@@ -1,13 +1,14 @@
 import React from 'react';
 
 import './App.css';
-
-import {Example} from './Example'
+import { Data } from './components/data/Data';
 
 function App() {
   return (
-   <React.Fragment>
-    <Example />
+    <React.Fragment>
+      <div className='App'>
+        <Data />
+      </div>
     </React.Fragment>
   );
 }
