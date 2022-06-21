@@ -1,19 +1,20 @@
 import React, {useState,useEffect} from 'react';
 import {fetchData} from '../../features/todsMock/api'
+import { SelectColor } from './selectColor/SelectColor';
 
 export const Data = () => {
-    const [myData, setMyData] = useState([])
+    const [fetchedData, setFetchedData] = useState({})
     useEffect(() => {
-    
         const result= fetchData();
         result
         .then(response =>{ 
           
-            setMyData(response.data)
+            setFetchedData(response.data)
         });
-
     },[])
   return (
-    <div>{console.log(myData)}</div>
-  )
+    <>
+      <SelectColor data= {fetchedData} />
+    </>
+    )
 }
