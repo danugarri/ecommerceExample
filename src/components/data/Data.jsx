@@ -12,7 +12,8 @@ export const Data = () => {
           
             setFetchedData(response.data)
         });
-    },[])
+    },[]);
+
   return (
     <>
       <SelectColor data= {fetchedData} />
