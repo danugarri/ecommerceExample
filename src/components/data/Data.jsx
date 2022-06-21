@@ -8,6 +8,7 @@ import { SelectQuantity } from '../selectQuantity/SelectQuantity';
 import { AddToCart } from '../addToCart/AddToCart';
 import swal from 'sweetalert';
 import { CartBadge } from '../cartBadge/CartBadge';
+import { shoppingCartAction } from '../../app/actions/shoppingCartAction';
 
 export const Data = () => {
   const [fetchedData, setFetchedData] = useState({});
@@ -19,6 +20,7 @@ export const Data = () => {
   const HandleClick = () => {
     const formattedMessage = `Has añadido ${selectedQuantity} unidad/des de la talla ${selectedSize} y color ${selectedColor}`;
     swal(formattedMessage, '', 'success');
+    dispatch(shoppingCartAction('product1',selectedQuantity,selectedColor,selectedSize))
     setCounter((prev) => (Number(prev) + Number(selectedQuantity)));
   };
   useEffect(() => {

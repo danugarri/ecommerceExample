@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import counterReducer from '../features/counter/counterSlice';
 import getAsyncDataReducer from '../features/todsMock/getDataSlice';
+import {shoppingCartReducer} from './reducers/shoppingCartReducer';
 
 export const store = configureStore({
   reducer: {
-    counter: counterReducer,
-    getData: getAsyncDataReducer
+    getData: getAsyncDataReducer,
+    shoppingCart: shoppingCartReducer,
   },
 });
