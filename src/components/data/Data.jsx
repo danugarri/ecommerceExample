@@ -5,6 +5,8 @@ import { SelectColor } from '../selectColor/SelectColor';
 import { useDispatch } from 'react-redux/es/exports';
 import { fetchData } from '../../features/todsMock/getData';
 import { SelectQuantity } from '../selectQuantity/SelectQuantity';
+import { AddToCart } from '../addToCart/AddToCart';
+import swal from 'sweetalert';
 
 export const Data = () => {
   const [fetchedData, setFetchedData] = useState({});
@@ -12,6 +14,11 @@ export const Data = () => {
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedQuantity, setSelectedQuantity] = useState('');
   const dispatch = useDispatch();
+  const HandleClick = () => {
+    const formattedMessage = `Has añadido ${selectedQuantity} unidad/des de la talla ${selectedSize} y color ${selectedColor}`;
+    swal(formattedMessage, '', 'success');
+  
+  };
   useEffect(() => {
     // push data to redux
     dispatch(getAsyncData());
@@ -28,6 +35,7 @@ export const Data = () => {
       <SelectColor data={fetchedData} setSelectedValue={setSelectedColor} />
       <SelectSize data={fetchedData} setSelectedValue={setSelectedSize} />
       <SelectQuantity setSelectedValue={setSelectedQuantity}/>
+      <AddToCart  onHandleClick= {HandleClick}/>
     </>
   );
 };
