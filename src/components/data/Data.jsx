@@ -7,6 +7,7 @@ import { fetchData } from '../../features/todsMock/getData';
 import { SelectQuantity } from '../selectQuantity/SelectQuantity';
 import { AddToCart } from '../addToCart/AddToCart';
 import swal from 'sweetalert';
+import { CartBadge } from '../cartBadge/CartBadge';
 
 export const Data = () => {
   const [fetchedData, setFetchedData] = useState({});
@@ -36,6 +37,7 @@ export const Data = () => {
       <SelectSize data={fetchedData} setSelectedValue={setSelectedSize} />
       <SelectQuantity setSelectedValue={setSelectedQuantity}/>
       <AddToCart  onHandleClick= {HandleClick}/>
+      <CartBadge />
     </>
   );
 };
