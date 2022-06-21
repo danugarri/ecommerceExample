@@ -3,10 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import './CartBadge.css'
 
-export const CartBadge = () => {
+export const CartBadge = ({counter}) => {
     const element = <FontAwesomeIcon icon={faCartShopping} />
   return (
-     <section className='container'><div className='badge'></div>{element}</section>
+     <section className='container'><div className='badge'>{counter}</div>{element}</section>
     
   )
 }

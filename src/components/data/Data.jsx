@@ -14,11 +14,12 @@ export const Data = () => {
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedQuantity, setSelectedQuantity] = useState('');
+  const [counter, setCounter] = useState(0);
   const dispatch = useDispatch();
   const HandleClick = () => {
     const formattedMessage = `Has añadido ${selectedQuantity} unidad/des de la talla ${selectedSize} y color ${selectedColor}`;
     swal(formattedMessage, '', 'success');
-  
+    setCounter((prev) => prev + 1);
   };
   useEffect(() => {
     // push data to redux
@@ -35,9 +36,9 @@ export const Data = () => {
     <>
       <SelectColor data={fetchedData} setSelectedValue={setSelectedColor} />
       <SelectSize data={fetchedData} setSelectedValue={setSelectedSize} />
-      <SelectQuantity setSelectedValue={setSelectedQuantity}/>
-      <AddToCart  onHandleClick= {HandleClick}/>
-      <CartBadge />
+      <SelectQuantity setSelectedValue={setSelectedQuantity} />
+      <AddToCart onHandleClick={HandleClick} />
+      <CartBadge counter={counter}/>
     </>
   );
 };
