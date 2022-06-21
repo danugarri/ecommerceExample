@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from 'react';
 import {fetchData} from '../../features/todsMock/api'
+import { SelectSize } from '../selectSize/SelectSize';
 import { SelectColor } from './selectColor/SelectColor';
 
 export const Data = () => {
@@ -15,6 +16,7 @@ export const Data = () => {
   return (
     <>
       <SelectColor data= {fetchedData} />
+      <SelectSize data= {fetchedData} />
     </>
     )
 }
