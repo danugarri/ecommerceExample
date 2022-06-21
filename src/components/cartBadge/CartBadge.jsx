@@ -6,7 +6,7 @@ import './CartBadge.css'
 export const CartBadge = ({counter}) => {
     const element = <FontAwesomeIcon icon={faCartShopping} />
   return (
-     <section className='container'><div className='badge'>{counter}</div>{element}</section>
+     <section className='container'><div className='badge'><span className='counter'>{counter}</span></div>{element}</section>
     
   )
 }

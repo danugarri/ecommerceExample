@@ -7,10 +7,17 @@
 }
 .badge{
     position: relative;
-    top:-0.3rem;
+    top:-0.6rem;
     left: 1rem;
     background-color: red;
     min-width: 0.7rem;
     max-height: 0.7rem;
     border-radius: 50%;
+}
+.counter{
+    font-size: 10px;
+    position: relative;
+    top:-0.55rem;
+    font-weight: bold;
+  
 }
