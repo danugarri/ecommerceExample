@@ -14,9 +14,12 @@ export const SelectQuantity = ({ setSelectedValue }) => {
     );
   }
   return (
-    <select name='select' onChange={handleChange}>
-      <option value='' defaultValue></option>
-      {amounts}
-    </select>
+    <React.Fragment>
+      <label htmlFor='qty'>QTY</label>
+      <select name='qty' onChange={handleChange}>
+        <option value='' defaultValue></option>
+        {amounts}
+      </select>
+    </React.Fragment>
   );
 };
