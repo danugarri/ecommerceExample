@@ -1,21 +1,14 @@
 import { types } from '../types/types';
 
 const initialState = {
-  productName: null,
-  quantity: null,
-  size: null,
-  color: null,
+  orders: [],
 };
 export const shoppingCartReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case types.shoppingCart:
-      return {
-        shoppingCart: action.payload,
-      };
-
-    default:
-      return {
-        ...state,
-      };
+  if (action.type === types.shoppingCart) {
+    return Object.assign({}, state, {
+        orders: state.orders.concat(action.payload)
+      });
+   
   }
+  return state;
 };
