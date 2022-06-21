@@ -3,20 +3,30 @@ import { getAsyncData } from '../../features/todsMock/getDataSlice';
 import { SelectSize } from '../selectSize/SelectSize';
 import { SelectColor } from '../selectColor/SelectColor';
 import { useDispatch } from 'react-redux/es/exports';
+import { fetchData } from '../../features/todsMock/getData';
 
 export const Data = () => {
   const [fetchedData, setFetchedData] = useState({});
+  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedSize, setSelectedSize] = useState('');
   const dispatch= useDispatch();
   useEffect(() => {
-    const result = dispatch(getAsyncData());
+    // push data to redux
+    dispatch(getAsyncData());
+    const result= fetchData();
+    result
+    .then(response =>{ 
+      
+        setFetchedData(response.data)
+    });
 
     setFetchedData(result);
   }, [dispatch]);
 
   return (
     <>
-      <SelectColor data={fetchedData} />
-      <SelectSize data={fetchedData} />
+      <SelectColor data={fetchedData} setSelectedValue={setSelectedColor}/>
+      <SelectSize data={fetchedData} setSelectedValue={setSelectedSize} />
     </>
   );
 };
