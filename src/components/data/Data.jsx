@@ -13,13 +13,13 @@ export const Data = () => {
   const [fetchedData, setFetchedData] = useState({});
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
-  const [selectedQuantity, setSelectedQuantity] = useState('');
+  const [selectedQuantity, setSelectedQuantity] = useState(0);
   const [counter, setCounter] = useState(0);
   const dispatch = useDispatch();
   const HandleClick = () => {
     const formattedMessage = `Has añadido ${selectedQuantity} unidad/des de la talla ${selectedSize} y color ${selectedColor}`;
     swal(formattedMessage, '', 'success');
-    setCounter((prev) => prev + 1);
+    setCounter((prev) => (Number(prev) + Number(selectedQuantity)));
   };
   useEffect(() => {
     // push data to redux
