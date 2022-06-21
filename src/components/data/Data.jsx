@@ -21,7 +21,7 @@ export const Data = () => {
     const formattedMessage = `Has añadido ${selectedQuantity} unidad/des de la talla ${selectedSize} y color ${selectedColor}`;
     swal(formattedMessage, '', 'success');
     dispatch(shoppingCartAction('product1',selectedQuantity,selectedColor,selectedSize))
-    setCounter((prev) => (Number(prev) + Number(selectedQuantity)));
+    setCounter((prev) => prev + 1);
   };
   useEffect(() => {
     // push data to redux
