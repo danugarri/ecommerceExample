@@ -17,7 +17,7 @@ export const Data = () => {
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedQuantity, setSelectedQuantity] = useState('');
   const [counter, setCounter] = useState(0);
-  const [isFulfilled, setIsFulfilled]= useState(true)
+  const [isFulfilled, setIsFulfilled]= useState(false)
   const dispatch = useDispatch();
   // Logic to handle the add to cart button
   useEffect(() => {
