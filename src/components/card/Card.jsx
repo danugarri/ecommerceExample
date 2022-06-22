@@ -32,6 +32,15 @@ export const Card = ({ setCounter }) => {
   return (
     <section>
       <h3>Product Title</h3>
+      <h3>499€</h3>
+      <section id= 'features'>
+        <label>Availability: </label><span>In stock</span>
+        <label>Product code: </label><span>#4444</span>
+        <label>Tags: </label><span>Woman</span>
+      </section>
+      <p id= 'description'>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus qui culpa at nesciunt ipsum dicta reprehenderit odio delectus dolorem nisi! Aliquam autem fugit quaerat neque a consectetur nesciunt quae quia.
+      </p>
       <Selects
         setCounter={setCounter}
         selectedQuantity={selectedQuantity}
