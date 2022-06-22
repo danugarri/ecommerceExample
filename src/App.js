@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
+import { Card } from './components/card/Card';
 import { CartBadge } from './components/cartBadge/CartBadge';
-import { Data } from './components/data/Data';
 import { ProductImg } from './components/productImg/ProductImg';
 
 function App() {
@@ -14,10 +14,10 @@ function App() {
             <ProductImg />
           </div>
           <div className='box-rigth'>
-            <Data setCounter= {setCounter}/>
+            <Card setCounter={setCounter} />
           </div>
         </section>
-        <CartBadge counter={counter}  />
+        <CartBadge counter={counter} />
       </main>
     </React.Fragment>
   );
