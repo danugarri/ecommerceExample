@@ -4,6 +4,7 @@
     justify-content: right;
     position: absolute;
     right: 1rem;
+    top:1rem
 }
 .badge{
     position: relative;
