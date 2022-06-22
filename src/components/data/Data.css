@@ -1,0 +1,13 @@
+.card{
+    width: 657px;
+    height: 683px;
+    border:1px solid black;
+    position: relative;
+    left: 330px;
+}
+#selects{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+}

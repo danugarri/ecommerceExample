@@ -7,16 +7,16 @@ import { fetchData } from '../../features/todsMock/getData';
 import { SelectQuantity } from '../selectQuantity/SelectQuantity';
 import { AddToCart } from '../addToCart/AddToCart';
 import swal from 'sweetalert';
-import { CartBadge } from '../cartBadge/CartBadge';
 import { shoppingCartAction } from '../../app/actions/shoppingCartAction';
 import { checkValues } from '../../app/shared/helpers';
+import './Data.css'
 
-export const Data = () => {
+export const Data = ({setCounter}) => {
   const [fetchedData, setFetchedData] = useState({});
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedQuantity, setSelectedQuantity] = useState('');
-  const [counter, setCounter] = useState(0);
+ 
   const [isFulfilled, setIsFulfilled] = useState(false);
   const dispatch = useDispatch();
   // Logic to handle the add to cart button
@@ -48,19 +48,26 @@ export const Data = () => {
 
   return (
     <>
-      <SelectColor
-        data={fetchedData}
-        setSelectedValue={setSelectedColor}
-        selectedColor={selectedColor}
-      />
-      <SelectSize
-        data={fetchedData}
-        setSelectedValue={setSelectedSize}
-        selectedSize={selectedSize}
-      />
-      <SelectQuantity setSelectedValue={setSelectedQuantity} selectedQuantity={selectedQuantity} />
-      <AddToCart onHandleClick={HandleClick} fulfilled={isFulfilled} />
-      <CartBadge counter={counter} />
+      <section className='card'>
+        <div id='selects'>
+          <SelectColor
+            data={fetchedData}
+            setSelectedValue={setSelectedColor}
+            selectedColor={selectedColor}
+          />
+          <SelectSize
+            data={fetchedData}
+            setSelectedValue={setSelectedSize}
+            selectedSize={selectedSize}
+          />
+          <SelectQuantity
+            setSelectedValue={setSelectedQuantity}
+            selectedQuantity={selectedQuantity}
+          />
+        </div>
+        <AddToCart onHandleClick={HandleClick} fulfilled={isFulfilled} />
+      </section>
+      
     </>
   );
 };
