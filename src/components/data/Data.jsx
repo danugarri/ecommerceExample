@@ -9,6 +9,7 @@ import { AddToCart } from '../addToCart/AddToCart';
 import swal from 'sweetalert';
 import { CartBadge } from '../cartBadge/CartBadge';
 import { shoppingCartAction } from '../../app/actions/shoppingCartAction';
+import { checkValues } from '../../app/shared/helpers';
 
 export const Data = () => {
   const [fetchedData, setFetchedData] = useState({});
@@ -18,10 +19,14 @@ export const Data = () => {
   const [counter, setCounter] = useState(0);
   const dispatch = useDispatch();
   const HandleClick = () => {
+    const fulFilled= checkValues(selectedQuantity,selectedSize,selectedColor);
     const formattedMessage = `Has añadido ${selectedQuantity} unidad/des de la talla ${selectedSize} y color ${selectedColor}`;
-    swal(formattedMessage, '', 'success');
-    dispatch(shoppingCartAction('product1',selectedQuantity,selectedColor,selectedSize))
-    setCounter((prev) => prev + 1);
+    if(fulFilled) {
+
+      swal(formattedMessage, '', 'success');
+      dispatch(shoppingCartAction('product1',selectedQuantity,selectedColor,selectedSize))
+      setCounter((prev) => prev + 1);
+    }
   };
   useEffect(() => {
     // push data to redux
