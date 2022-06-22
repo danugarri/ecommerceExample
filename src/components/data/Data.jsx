@@ -15,16 +15,20 @@ export const Data = () => {
   const [fetchedData, setFetchedData] = useState({});
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
-  const [selectedQuantity, setSelectedQuantity] = useState(0);
+  const [selectedQuantity, setSelectedQuantity] = useState('');
   const [counter, setCounter] = useState(0);
+  const [isFulfilled, setIsFulfilled]= useState(true)
   const dispatch = useDispatch();
+  // Logic to handle the add to cart button
+  useEffect(() => {
+    const fulFilled = checkValues(selectedQuantity, selectedSize, selectedColor);
+    setIsFulfilled(fulFilled);
+  }, [selectedQuantity, selectedSize, selectedColor])
   const HandleClick = () => {
-    const fulFilled= checkValues(selectedQuantity,selectedSize,selectedColor);
     const formattedMessage = `Has añadido ${selectedQuantity} unidad/des de la talla ${selectedSize} y color ${selectedColor}`;
-    if(fulFilled) {
-
+    if (!isFulfilled) {
       swal(formattedMessage, '', 'success');
-      dispatch(shoppingCartAction('product1',selectedQuantity,selectedColor,selectedSize))
+      dispatch(shoppingCartAction('product1', selectedQuantity, selectedColor, selectedSize));
       setCounter((prev) => prev + 1);
     }
   };
@@ -44,8 +48,8 @@ export const Data = () => {
       <SelectColor data={fetchedData} setSelectedValue={setSelectedColor} />
       <SelectSize data={fetchedData} setSelectedValue={setSelectedSize} />
       <SelectQuantity setSelectedValue={setSelectedQuantity} />
-      <AddToCart onHandleClick={HandleClick} />
-      <CartBadge counter={counter}/>
+      <AddToCart onHandleClick={HandleClick} fulfilled= {isFulfilled}/>
+      <CartBadge counter={counter} />
     </>
   );
 };
