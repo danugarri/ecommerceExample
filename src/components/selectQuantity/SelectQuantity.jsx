@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const SelectQuantity = ({ setSelectedValue }) => {
+export const SelectQuantity = ({ setSelectedValue, selectedQuantity }) => {
   const handleChange = (e) => {
     setSelectedValue(e.target.value);
     console.log(e.target.value);
@@ -16,7 +16,7 @@ export const SelectQuantity = ({ setSelectedValue }) => {
   return (
     <React.Fragment>
       <label htmlFor='qty'>QTY</label>
-      <select name='qty' onChange={handleChange}>
+      <select name='qty' onChange={handleChange} value={selectedQuantity}>
         <option value='' defaultValue></option>
         {amounts}
       </select>

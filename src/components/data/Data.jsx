@@ -17,13 +17,13 @@ export const Data = () => {
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedQuantity, setSelectedQuantity] = useState('');
   const [counter, setCounter] = useState(0);
-  const [isFulfilled, setIsFulfilled]= useState(false)
+  const [isFulfilled, setIsFulfilled] = useState(false);
   const dispatch = useDispatch();
   // Logic to handle the add to cart button
   useEffect(() => {
     const fulFilled = checkValues(selectedQuantity, selectedSize, selectedColor);
     setIsFulfilled(fulFilled);
-  }, [selectedQuantity, selectedSize, selectedColor])
+  }, [selectedQuantity, selectedSize, selectedColor]);
   const HandleClick = () => {
     const formattedMessage = `Has añadido ${selectedQuantity} unidad/des de la talla ${selectedSize} y color ${selectedColor}`;
     if (!isFulfilled) {
@@ -31,6 +31,9 @@ export const Data = () => {
       dispatch(shoppingCartAction('product1', selectedQuantity, selectedColor, selectedSize));
       setCounter((prev) => prev + 1);
     }
+    setSelectedColor('');
+    setSelectedQuantity('');
+    setSelectedSize('');
   };
   useEffect(() => {
     // push data to redux
@@ -45,10 +48,18 @@ export const Data = () => {
 
   return (
     <>
-      <SelectColor data={fetchedData} setSelectedValue={setSelectedColor} />
-      <SelectSize data={fetchedData} setSelectedValue={setSelectedSize} />
-      <SelectQuantity setSelectedValue={setSelectedQuantity} />
-      <AddToCart onHandleClick={HandleClick} fulfilled= {isFulfilled}/>
+      <SelectColor
+        data={fetchedData}
+        setSelectedValue={setSelectedColor}
+        selectedColor={selectedColor}
+      />
+      <SelectSize
+        data={fetchedData}
+        setSelectedValue={setSelectedSize}
+        selectedSize={selectedSize}
+      />
+      <SelectQuantity setSelectedValue={setSelectedQuantity} selectedQuantity={selectedQuantity} />
+      <AddToCart onHandleClick={HandleClick} fulfilled={isFulfilled} />
       <CartBadge counter={counter} />
     </>
   );
