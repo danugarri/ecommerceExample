@@ -38,7 +38,7 @@ export const Card = ({ setCounter }) => {
       <h3>499€</h3>
       <section id='features'>
         <div>
-          Availability: <span>{stock.stockLevelStatus}</span>
+          Availability: <span>{stock?.stockLevelStatus}</span>
         </div>
         <div>
           Product code: <span>{code}</span>
