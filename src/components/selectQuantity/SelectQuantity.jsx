@@ -1,5 +1,5 @@
 import React from 'react';
-
+import '../selects/Selects.css';
 export const SelectQuantity = ({ setSelectedValue, selectedQuantity }) => {
   const handleChange = (e) => {
     setSelectedValue(e.target.value);
@@ -15,9 +15,13 @@ export const SelectQuantity = ({ setSelectedValue, selectedQuantity }) => {
   }
   return (
     <React.Fragment>
-      <label htmlFor='qty'>QTY</label>
-      <select name='qty' onChange={handleChange} value={selectedQuantity}>
-        <option value='' defaultValue></option>
+      <label htmlFor='qty' className='label-select'>
+        QTY
+      </label>
+      <select name='qty' onChange={handleChange} value={selectedQuantity} className='placeholder'>
+        <option value='' defaultValue>
+          1
+        </option>
         {amounts}
       </select>
     </React.Fragment>

@@ -1,16 +1,26 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 .App {
-  text-align: center;
-  margin-top:2rem;
-  font-family: "Lato";
+  /* text-align: center; */
+  margin-top: 2rem;
+  font-family: 'Lato';
   /* width: 1800px;
   max-width: 1800px; */
 }
-
-
-
-
+.add-button {
+  font-size: 12px;
+  line-height: 36px;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: 'Lato';
+  position: relative;
+  top: 5rem;
+  height: 55px;
+  width: 216px;
+  background-color: #111111;
+  border: 1px solid #000000;
+  cursor: pointer;
+}

@@ -9,7 +9,7 @@
 .badge{
     position: relative;
     top:-0.6rem;
-    left: 1rem;
+    left: 0.9rem;
     background-color: red;
     min-width: 0.7rem;
     max-height: 0.7rem;
@@ -17,8 +17,8 @@
 }
 .counter{
     font-size: 10px;
-    position: relative;
-    top:-0.55rem;
+    position: absolute;
     font-weight: bold;
+    right: 0.2rem;
   
 }

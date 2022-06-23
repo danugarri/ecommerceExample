@@ -6,6 +6,7 @@ import swal from 'sweetalert';
 import { useDispatch } from 'react-redux/es/exports';
 import { shoppingCartAction } from '../../app/actions/shoppingCartAction';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
+import './Card.css'
 
 export const Card = ({ setCounter }) => {
   const [selectedColor, setSelectedColor] = useState('');
@@ -33,7 +34,7 @@ export const Card = ({ setCounter }) => {
   }, [selectedQuantity, selectedSize, selectedColor]);
 
   return (
-    <section>
+    <section className='card'>
       <h3>{name}</h3>
       <h3>499€</h3>
       <section id='features'>

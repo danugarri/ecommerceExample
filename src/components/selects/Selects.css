@@ -1,7 +1,24 @@
-
-#selects{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-   
+#selects {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.label-select {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 24px;
+  color: #111111;
+  font-weight: 700;
+  font-family: 'Lato';
+}
+.placeholder {
+  font-size: 13px;
+  letter-spacing: 1px;
+  line-height: 24px;
+  color: #111111;
+  font-weight: 300;
+  font-family: 'Lato';
+  position: relative;
+  top: 2rem;
+  left: -6rem;
 }

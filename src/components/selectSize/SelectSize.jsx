@@ -7,10 +7,13 @@ export const SelectSize = ({ data, setSelectedValue, selectedSize }) => {
   };
   return (
     <React.Fragment>
-      <label htmlFor='size'>SIZE</label>
-
-      <select name='size' onChange={handleChange} value={selectedSize}>
-        <option value='' defaultValue></option>
+      <label htmlFor='size' className='label-select'>
+        SIZE
+      </label>
+      <select name='size' onChange={handleChange} value={selectedSize} className='placeholder'>
+        <option value='' defaultValue>
+          Select Size
+        </option>
         {data?.variantOptions?.map((option) => (
           <option key={option.sizeCode} value={option.size}>
             {option.size}
