@@ -24,3 +24,25 @@
   border: 1px solid #000000;
   cursor: pointer;
 }
+@media only screen and (min-width: 300px) and (max-width: 987px) {
+  .App {
+    text-align: center;
+    margin-top: 2rem;
+    font-family: 'Lato';
+  }
+  .add-button {
+    font-size: 12px;
+    line-height: 36px;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: 'Lato';
+    position: relative;
+    top: 5rem;
+    left: 1rem;
+    height: 55px;
+    width: 216px;
+    background-color: #111111;
+    border: 1px solid #000000;
+    cursor: pointer;
+  }
+}

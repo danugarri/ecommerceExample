@@ -35,7 +35,7 @@ export const Card = ({ setCounter }) => {
 
   return (
     <section className='card'>
-      <h3>{name}</h3>
+      <h3 id='product-title'>{name}</h3>
       <span className='price'>499€</span>
       <section id='features'>
         <div>

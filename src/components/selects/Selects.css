@@ -22,3 +22,26 @@
   top: 2rem;
   left: -6rem;
 }
+@media only screen and (min-width: 300px) and (max-width: 987px) {
+  #selects {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    left: 3rem;
+  }
+  .label-select {
+    display: none;
+  }
+  .placeholder {
+    font-size: 0.8125rem;
+    letter-spacing: 0.0625rem;
+    line-height: 1.5rem;
+    color: #111111;
+    font-weight: 300;
+    font-family: 'Lato';
+    position: relative;
+    left: 0rem;
+    margin-top: 1rem;
+  }
+}

@@ -1,40 +1,88 @@
 .card {
-  width: 657px;
-  height: 683px;
+  width: 41.0625rem;
+  height: 42.6875rem;
   position: absolute;
-  right: 150px;
+  right: 9.375rem;
   display: flex;
   flex-direction: column;
 }
 .price {
-  line-height: 12px;
+  line-height: 0.75rem;
   color: #68899a;
   font-weight: 400;
   font-family: 'Lato';
-  margin: 30px 0 70px;
-  font-size: 19px;
+  margin: 1.875rem 0 4.375rem;
+  font-size: 1.1875rem;
 }
 .feature {
-  font-size: 14px;
-  letter-spacing: 1px;
-  line-height: 24px;
+  font-size: 0.875rem;
+  letter-spacing: 0.0625rem;
+  line-height: 1.5rem;
   color: #111111;
   font-weight: 400;
   font-family: 'Lato';
   font-weight: bold;
 }
 .feature-value {
-  font-size: 14px;
-  line-height: 12px;
+  font-size: 0.875rem;
+  line-height: 0.75rem;
   color: #68899a;
   font-weight: 400;
   font-family: 'Lato';
 }
 #description {
-  font-size: 12px;
-  letter-spacing: 0px;
-  line-height: 21px;
+  font-size: 0.75rem;
+  letter-spacing: 0rem;
+  line-height: 1.3125rem;
   color: #111111;
   font-family: 'Font Awesome';
-  margin: 30px 0;
+  margin: 1.875rem 0;
+}
+@media only screen and (min-width: 300px) and (max-width: 987px) {
+  .card {
+    width: 10rem;
+    height: 20rem;
+    position: absolute;
+    right: 9.375rem;
+    display: flex;
+    flex-direction: column;
+  }
+  #product-title {
+    position: relative;
+    left: 2rem;
+  }
+  .price {
+    line-height: 0.75rem;
+    color: #68899a;
+    font-weight: 400;
+    font-family: 'Lato';
+    position: relative;
+    left: 2rem;
+    font-size: 1.1875rem;
+  }
+  .feature {
+    font-size: 0.875rem;
+    letter-spacing: 0.0625rem;
+    line-height: 1.5rem;
+    color: #111111;
+    font-weight: 400;
+    font-family: 'Lato';
+    font-weight: bold;
+  }
+  .feature-value {
+    font-size: 0.875rem;
+    line-height: 0.75rem;
+    color: #68899a;
+    font-weight: 400;
+    font-family: 'Lato';
+  }
+  #description {
+    font-size: 0.75rem;
+    letter-spacing: 0rem;
+    line-height: 1.3125rem;
+    color: #111111;
+    font-family: 'Font Awesome';
+    position: relative;
+    left: 2rem;
+  }
 }

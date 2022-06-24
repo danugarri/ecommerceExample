@@ -1,5 +1,5 @@
 import React from 'react';
-import '../selects/Selects.css';
+
 export const SelectQuantity = ({ setSelectedValue, selectedQuantity }) => {
   const handleChange = (e) => {
     setSelectedValue(e.target.value);
