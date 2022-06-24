@@ -1,6 +1,6 @@
 .card {
-  width: 41.0625rem;
-  height: 42.6875rem;
+  width: 41vw;
+  height: 42vh;
   position: absolute;
   right: 9.375rem;
   display: flex;
@@ -39,7 +39,7 @@
   font-family: 'Font Awesome';
   margin: 1.875rem 0;
 }
-@media only screen and (min-width: 300px) and (max-width: 987px) {
+@media only screen and (min-width: 300px) and (max-width: 860px) {
   .card {
     width: 10rem;
     height: 20rem;
@@ -85,5 +85,16 @@
     font-family: 'Font Awesome';
     position: relative;
     left: 2rem;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  .card {
+    width: 41vw;
+    height: 42vh;
+    position: absolute;
+    right: 12rem;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
   }
 }

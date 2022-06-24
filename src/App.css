@@ -36,7 +36,7 @@
   border: 1px solid #000000;
   cursor: not-allowed;
 }
-@media only screen and (min-width: 300px) and (max-width: 987px) {
+@media only screen and (min-width: 300px) and (max-width: 860px) {
   .App {
     text-align: center;
     margin-top: 2rem;

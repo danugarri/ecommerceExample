@@ -22,7 +22,7 @@
   top: 2rem;
   left: -6rem;
 }
-@media only screen and (min-width: 300px) and (max-width: 987px) {
+@media only screen and (min-width: 300px) and (max-width: 860px) {
   #selects {
     display: flex;
     flex-direction: column;

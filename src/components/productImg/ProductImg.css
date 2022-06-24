@@ -1,17 +1,32 @@
 #main-placeholder {
-  width: 657px;
-  height: 683px;
+  width: 30vw;
+  height: 50vh;
   background-color: #e1e1e1;
   position: absolute;
   left: 4rem;
+  top: 4rem;
 }
-@media only screen and (min-width: 300px) and (max-width: 987px) {
+@media only screen and (min-width: 300px) and (max-width: 599px) {
   #main-placeholder {
-    /* width: 11rem;
-    height: 10rem;
-    background-color: #e1e1e1;
-    position: relative;
-    left: 4rem; */
     display: none;
+  }
+}
+@media only screen and (min-width: 600px) and (max-width: 860px) {
+  #main-placeholder {
+    width: 38%;
+    height: 38%;
+    background-color: #e1e1e1;
+    position: absolute;
+    left: 4rem;
+  }
+}
+@media only screen and (min-width: 1300px) {
+  #main-placeholder {
+    width: 30vw;
+    height: 50vh;
+    background-color: #e1e1e1;
+    position: absolute;
+    left: 10rem;
+    top: 4rem;
   }
 }
