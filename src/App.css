@@ -24,6 +24,20 @@
   border: 1px solid #000000;
   cursor: pointer;
 }
+.disabled-button {
+  font-size: 12px;
+  line-height: 36px;
+  color: #ffffff;
+  font-weight: 700;
+  font-family: 'Lato';
+  position: relative;
+  top: 5rem;
+  height: 55px;
+  width: 216px;
+  background-color: #bebebe;
+  border: 1px solid #000000;
+  cursor: not-allowed;
+}
 @media only screen and (min-width: 300px) and (max-width: 987px) {
   .App {
     text-align: center;
@@ -44,5 +58,20 @@
     background-color: #111111;
     border: 1px solid #000000;
     cursor: pointer;
+  }
+  .disabled-button {
+    font-size: 12px;
+    line-height: 36px;
+    color: #ffffff;
+    font-weight: 700;
+    font-family: 'Lato';
+    position: relative;
+    top: 5rem;
+    left: 1rem;
+    height: 55px;
+    width: 216px;
+    background-color: #bebebe;
+    border: 1px solid #000000;
+    cursor: not-allowed;
   }
 }
