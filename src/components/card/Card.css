@@ -1,8 +1,40 @@
-.card{
-    width: 657px;
-    height: 683px;
-    position: absolute;
-    right: 150px;
-    display: flex;
-    flex-direction: column;
+.card {
+  width: 657px;
+  height: 683px;
+  position: absolute;
+  right: 150px;
+  display: flex;
+  flex-direction: column;
+}
+.price {
+  line-height: 12px;
+  color: #68899a;
+  font-weight: 400;
+  font-family: 'Lato';
+  margin: 30px 0 70px;
+  font-size: 19px;
+}
+.feature {
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 24px;
+  color: #111111;
+  font-weight: 400;
+  font-family: 'Lato';
+  font-weight: bold;
+}
+.feature-value {
+  font-size: 14px;
+  line-height: 12px;
+  color: #68899a;
+  font-weight: 400;
+  font-family: 'Lato';
+}
+#description {
+  font-size: 12px;
+  letter-spacing: 0px;
+  line-height: 21px;
+  color: #111111;
+  font-family: 'Font Awesome';
+  margin: 30px 0;
 }

@@ -20,7 +20,7 @@ export const SelectQuantity = ({ setSelectedValue, selectedQuantity }) => {
       </label>
       <select name='qty' onChange={handleChange} value={selectedQuantity} className='placeholder'>
         <option value='' defaultValue>
-          1
+          0
         </option>
         {amounts}
       </select>
