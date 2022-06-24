@@ -2,4 +2,15 @@
   width: 657px;
   height: 683px;
   background-color: #e1e1e1;
+  position: absolute;
+  left: 4rem;
+}
+@media only screen and (min-width: 300px) and (max-width: 987px) {
+  #main-placeholder {
+    width: 20rem;
+    height: 20rem;
+    background-color: #e1e1e1;
+    position: relative;
+    left: 7rem;
+  }
 }

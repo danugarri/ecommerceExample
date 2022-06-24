@@ -5,6 +5,7 @@
   right: 9.375rem;
   display: flex;
   flex-direction: column;
+  padding: 2rem;
 }
 .price {
   line-height: 0.75rem;
@@ -43,7 +44,7 @@
     width: 10rem;
     height: 20rem;
     position: absolute;
-    right: 9.375rem;
+    right: 14rem;
     display: flex;
     flex-direction: column;
   }
