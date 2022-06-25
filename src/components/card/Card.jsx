@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { AddToCart } from '../addToCart/AddToCart';
 import { Selects } from '../selects/Selects';
-import { checkValues } from '../../app/shared/helpers';
+import { checkValues } from '../../app/shared/helpers/helpers';
 import swal from 'sweetalert';
 import { useDispatch } from 'react-redux/es/exports';
 import { shoppingCartAction } from '../../app/actions/shoppingCartAction';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import './Card.css';
 
-export const Card = ({ setCounter }) => {
-  const cartLenght = useSelector((state) => state.shoppingCart.orders.length);
+export const Card = () => {
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedQuantity, setSelectedQuantity] = useState('');
@@ -22,7 +21,6 @@ export const Card = ({ setCounter }) => {
     if (!isFulfilled) {
       swal(formattedMessage, '', 'success');
       dispatch(shoppingCartAction(name, selectedQuantity, selectedColor, selectedSize));
-      setCounter(cartLenght);
     }
     setSelectedColor('');
     setSelectedQuantity('');
@@ -57,7 +55,6 @@ export const Card = ({ setCounter }) => {
         consectetur nesciunt quae quia.
       </p>
       <Selects
-        setCounter={setCounter}
         selectedQuantity={selectedQuantity}
         setSelectedQuantity={setSelectedQuantity}
         selectedColor={selectedColor}
