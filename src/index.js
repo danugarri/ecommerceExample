@@ -5,6 +5,7 @@ import { store } from './app/store';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './index.css';
+import { CustomRoutes } from './app/routes';
 
 const container = document.getElementById('root');
 const root = createRoot(container);
@@ -12,7 +13,7 @@ const root = createRoot(container);
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <CustomRoutes />
     </Provider>
   </React.StrictMode>
 );
