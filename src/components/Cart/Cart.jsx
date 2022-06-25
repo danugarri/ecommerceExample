@@ -5,8 +5,8 @@ import './Cart.css';
 import { CartTable } from './cartTable/CartTable';
 export const Cart = () => {
   const orders = useSelector((state) => state.shoppingCart.orders);
-
   const tableHeaders = orders.map((order, index) => (index === 0 ? Object.keys(order) : null));
+
   return (
     <>
       <CartTable tableHeaders={tableHeaders} orders={orders} />

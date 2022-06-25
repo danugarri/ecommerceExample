@@ -12,14 +12,12 @@ export const CartTable = ({ tableHeaders, orders }) => {
           ))}
         </tr>
       </thead>
-
       <tbody>
         {orders.map((order, index) => (
           <tr key={index}>
-            <td>{order.productName}</td>
-            <td>{order.quantity}</td>
-            <td>{order.size}</td>
-            <td>{order.color}</td>
+            {Object.values(order).map((item, index) => (
+              <td key={index}>{item}</td>
+            ))}
           </tr>
         ))}
       </tbody>
