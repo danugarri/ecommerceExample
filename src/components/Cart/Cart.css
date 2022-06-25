@@ -1,0 +1,12 @@
+table {
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+  border: 3px solid #000;
+  font-family: Lato;
+}
+
+th,
+td {
+  padding: 20px;
+}
