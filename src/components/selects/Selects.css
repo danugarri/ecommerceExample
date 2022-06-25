@@ -43,5 +43,6 @@
     position: relative;
     left: 0rem;
     margin-top: 1rem;
+    min-width: fit-content;
   }
 }
