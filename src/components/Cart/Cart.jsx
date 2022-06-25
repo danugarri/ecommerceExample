@@ -8,9 +8,9 @@ export const Cart = () => {
   const tableHeaders = orders.map((order, index) => (index === 0 ? Object.keys(order) : null));
 
   return (
-    <>
+    <section id='cart-container'>
       <CartTable tableHeaders={tableHeaders} orders={orders} />
       <Link to='/'>Volver</Link>
-    </>
+    </section>
   );
 };
