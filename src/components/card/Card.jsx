@@ -9,6 +9,7 @@ import { useSelector } from 'react-redux/es/hooks/useSelector';
 import './Card.css';
 
 export const Card = ({ setCounter }) => {
+  const cartLenght = useSelector((state) => state.shoppingCart.orders.length);
   const [selectedColor, setSelectedColor] = useState('');
   const [selectedSize, setSelectedSize] = useState('');
   const [selectedQuantity, setSelectedQuantity] = useState('');
@@ -21,7 +22,7 @@ export const Card = ({ setCounter }) => {
     if (!isFulfilled) {
       swal(formattedMessage, '', 'success');
       dispatch(shoppingCartAction(name, selectedQuantity, selectedColor, selectedSize));
-      setCounter((prev) => prev + 1);
+      setCounter(cartLenght);
     }
     setSelectedColor('');
     setSelectedQuantity('');
