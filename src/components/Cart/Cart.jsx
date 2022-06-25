@@ -10,7 +10,9 @@ export const Cart = () => {
   return (
     <section id='cart-container'>
       <CartTable tableHeaders={tableHeaders} orders={orders} />
-      <Link to='/'>Volver</Link>
+      <span className='return-link'>
+        <Link to='/'>Volver</Link>
+      </span>
     </section>
   );
 };
