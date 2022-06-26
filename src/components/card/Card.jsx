@@ -7,6 +7,7 @@ import { useDispatch } from 'react-redux/es/exports';
 import { shoppingCartAction } from '../../app/actions/shoppingCartAction';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 import './Card.css';
+import { ProductFeatures } from '../productFeatures/ProductFeatures';
 
 export const Card = () => {
   const [selectedColor, setSelectedColor] = useState('');
@@ -34,26 +35,7 @@ export const Card = () => {
 
   return (
     <section className='card'>
-      <h3 id='product-title'>{name}</h3>
-      <span className='price'>499€</span>
-      <section id='features'>
-        <div>
-          <span className='feature'>Availability:</span>
-          <span className='feature-value'>{stock?.stockLevelStatus}</span>
-        </div>
-        <div>
-          <span className='feature'>Product code:</span>
-          <span className='feature-value'>{code}</span>
-        </div>
-        <div>
-          <span className='feature'>Tags:</span> <span className='feature-value'>Woman</span>
-        </div>
-      </section>
-      <p id='description'>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus qui culpa at nesciunt
-        ipsum dicta reprehenderit odio delectus dolorem nisi! Aliquam autem fugit quaerat neque a
-        consectetur nesciunt quae quia.
-      </p>
+      <ProductFeatures code={code} name={name} stock={stock} />
       <Selects
         selectedQuantity={selectedQuantity}
         setSelectedQuantity={setSelectedQuantity}
