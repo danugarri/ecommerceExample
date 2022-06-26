@@ -5,9 +5,9 @@ import './Cart.css';
 import { CartTable } from './cartTable/CartTable';
 
 export const Cart = () => {
-  // option 1: using Redux
+  //  Redux
   const orders = useSelector((state) => state.shoppingCart.orders);
-  // option 2 : get orders cookie values
+  //  get orders localStorage values
   const localStorageOrders = JSON.parse(localStorage.getItem('orders'));
   const tableHeaders = orders.map((order, index) => (index === 0 ? Object.keys(order) : null));
 
