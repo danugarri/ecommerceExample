@@ -11,8 +11,7 @@ export const initialCookie = (initialReduxState) => {
     // cartBadge counter
     document.cookie = `ordersCounter=0;max-age=60*60*24;path=/`;
     // orders cookie
-    document.cookie = `ORDERS=${JSON.stringify(initialReduxState)};max-age=60*60*24;`;
-    localStorage.setItem('orders', `${JSON.stringify(initialReduxState)}`);
+    document.cookie = `orders=${JSON.stringify(initialReduxState)};max-age=60*60*24;`;
     // document.cookie = 'orders=0;max-age=0';
   }
 };
@@ -31,7 +30,7 @@ export const updateCookie = (newOrder) => {
   const orders = JSON.parse(readCookie('orders'));
   // update cookies value
   document.cookie = `ordersCounter=${ordersCounterCookie + 1};max-age=60*60*24`;
-  document.cookie = `orders=${orders.push(JSON.stringify(newOrder))};max-age=60*60*24`;
+  document.cookie = `orders=${JSON.stringify([...orders, newOrder])};max-age=60*60*24`;
 };
 export const deleteCookie = () => {
   document.cookie = `ordersCounter=0;max-age=0`;

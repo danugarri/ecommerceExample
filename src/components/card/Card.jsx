@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AddToCart } from '../addToCart/AddToCart';
 import { Selects } from '../selects/Selects';
-import { checkValues, updateLocalStorage } from '../../app/shared/helpers/helpers';
+import { checkValues, updateCookie } from '../../app/shared/helpers/helpers';
 import swal from 'sweetalert';
 import { useDispatch } from 'react-redux/es/exports';
 import { shoppingCartAction } from '../../app/actions/shoppingCartAction';
@@ -29,7 +29,7 @@ export const Card = () => {
         size: selectedSize,
         color: selectedColor,
       };
-      updateLocalStorage(newOrder);
+      updateCookie(newOrder);
     }
     setSelectedColor('');
     setSelectedQuantity('');
