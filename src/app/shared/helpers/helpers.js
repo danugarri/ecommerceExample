@@ -9,13 +9,14 @@ export const initialCookie = (initialReduxState) => {
   // 1 day cookie
   if (!document.cookie) {
     // cartBadge counter
-    document.cookie = `ordersCounter=0;max-age=60*60*24`;
+    document.cookie = `ordersCounter=0;max-age=60*60*24;path=/`;
     // orders cookie
-    document.cookie = `orders=${JSON.stringify(initialReduxState)}`;
+    document.cookie = `ORDERS=${JSON.stringify(initialReduxState)};max-age=60*60*24;`;
+    localStorage.setItem('orders', `${JSON.stringify(initialReduxState)}`);
     // document.cookie = 'orders=0;max-age=0';
   }
 };
-function readCookie(name) {
+export function readCookie(name) {
   return document.cookie.replace(
     new RegExp(
       '(?:(?:^|.*;)\\s*' + name.replace(/[-.+*]/g, '\\$&') + '\\s*\\=\\s*([^;]*).*$)|^.*$'
@@ -30,9 +31,18 @@ export const updateCookie = (newOrder) => {
   const orders = JSON.parse(readCookie('orders'));
   // update cookies value
   document.cookie = `ordersCounter=${ordersCounterCookie + 1};max-age=60*60*24`;
-  document.cookie = `orders=${orders.push(newOrder)};max-age=60*60*24`;
+  document.cookie = `orders=${orders.push(JSON.stringify(newOrder))};max-age=60*60*24`;
 };
 export const deleteCookie = () => {
   document.cookie = `ordersCounter=0;max-age=0`;
   document.cookie = 'orders=0;max-age=0';
+};
+
+//  LOCAL STORAGE
+// update localStorage
+export const updateLocalStorage = (newOrder) => {
+  // localStorage.clear();
+  // orders
+  const orders = JSON.parse(localStorage.getItem('orders'));
+  localStorage.setItem('orders', `${JSON.stringify([...orders, newOrder])}`);
 };
