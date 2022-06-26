@@ -23,7 +23,13 @@ export const Card = () => {
       swal(formattedMessage, '', 'success');
       dispatch(shoppingCartAction(name, selectedQuantity, selectedColor, selectedSize));
       // Update the cookie value
-      updateCookie();
+      const newOrder = {
+        productName: name,
+        quantity: selectedQuantity,
+        size: selectedSize,
+        color: selectedColor,
+      };
+      updateCookie(newOrder);
     }
     setSelectedColor('');
     setSelectedQuantity('');

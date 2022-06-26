@@ -8,14 +8,15 @@ import { initialCookie } from './app/shared/helpers/helpers';
 
 function App() {
   const cartLength = useSelector((state) => state.shoppingCart.orders).length;
+  const orders = useSelector((state) => state.shoppingCart.orders);
   const [counter, setCounter] = useState(cartLength);
   useEffect(() => {
     setCounter(cartLength - 1);
   }, [cartLength]);
   // Setting initial cookie
   useEffect(() => {
-    initialCookie();
-  }, []);
+    initialCookie(orders);
+  }, [orders]);
 
   return (
     <React.Fragment>
