@@ -6,8 +6,8 @@ import { ProductImg } from './components/productImg/ProductImg';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
 
 function App() {
-  const [counter, setCounter] = useState(0);
   const cartLength = useSelector((state) => state.shoppingCart.orders).length;
+  const [counter, setCounter] = useState(cartLength);
   useEffect(() => {
     setCounter(cartLength - 1);
   }, [cartLength]);

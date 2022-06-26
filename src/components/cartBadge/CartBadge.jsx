@@ -5,7 +5,7 @@ import './CartBadge.css';
 import { useNavigate } from 'react-router-dom';
 
 export const CartBadge = ({ counter }) => {
-  const cartIcon = <FontAwesomeIcon icon={faCartShopping} />;
+  const cartIcon = <FontAwesomeIcon icon={faCartShopping} style={{ fontSize: '20px' }} />;
   let navigate = useNavigate();
   const browseToCart = () => navigate('./cart', { replace: true });
   return (
