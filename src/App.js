@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import { Card } from './components/card/Card';
 import { CartBadge } from './components/cartBadge/CartBadge';
@@ -9,14 +9,15 @@ import { initialCookie } from './app/shared/helpers/helpers';
 function App() {
   const cartLength = useSelector((state) => state.shoppingCart.orders).length;
   const orders = useSelector((state) => state.shoppingCart.orders);
-  const [counter, setCounter] = useState(cartLength);
+  // option using Redux to update the cartBadge
+  // const [counter, setCounter] = useState(cartLength);
+  // useEffect(() => {
+  //   setCounter(cartLength - 1);
+  // }, [cartLength]);
+  // Setting initial cookies
   useEffect(() => {
-    setCounter(cartLength - 1);
-  }, [cartLength]);
-  // Setting initial cookie
-  useEffect(() => {
-    initialCookie(orders);
-  }, [orders]);
+    initialCookie(cartLength - 1, orders);
+  }, [orders, cartLength]);
 
   return (
     <React.Fragment>
@@ -29,7 +30,7 @@ function App() {
             <Card />
           </div>
         </section>
-        <CartBadge counter={counter} />
+        <CartBadge />
       </main>
     </React.Fragment>
   );

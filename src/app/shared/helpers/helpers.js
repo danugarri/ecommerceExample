@@ -5,14 +5,15 @@ export const checkValues = (...args) => {
 };
 
 // COOKIES
-export const initialCookie = (initialReduxState) => {
+export const initialCookie = (cookie1, cookie2) => {
   // 1 day cookie
   if (!document.cookie) {
     // cartBadge counter
-    document.cookie = `ordersCounter=0;max-age=60*60*24;path=/`;
+    document.cookie = `ordersCounter=${JSON.stringify(cookie1)};max-age=60*60*24`;
     // orders cookie
-    document.cookie = `orders=${JSON.stringify(initialReduxState)};max-age=60*60*24;`;
+    document.cookie = `orders=${JSON.stringify(cookie2)};max-age=60*60*24`;
     // document.cookie = 'orders=0;max-age=0';
+    // document.cookie = 'ordersCounter=0;max-age=0';
   }
 };
 export function readCookie(name) {
