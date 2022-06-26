@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { AddToCart } from '../addToCart/AddToCart';
 import { Selects } from '../selects/Selects';
-import { checkValues } from '../../app/shared/helpers/helpers';
+import { checkValues, updateCookie } from '../../app/shared/helpers/helpers';
 import swal from 'sweetalert';
 import { useDispatch } from 'react-redux/es/exports';
 import { shoppingCartAction } from '../../app/actions/shoppingCartAction';
@@ -22,6 +22,8 @@ export const Card = () => {
     if (!isFulfilled) {
       swal(formattedMessage, '', 'success');
       dispatch(shoppingCartAction(name, selectedQuantity, selectedColor, selectedSize));
+      // Update the cookie value
+      updateCookie();
     }
     setSelectedColor('');
     setSelectedQuantity('');

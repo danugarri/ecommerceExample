@@ -4,6 +4,7 @@ import { Card } from './components/card/Card';
 import { CartBadge } from './components/cartBadge/CartBadge';
 import { ProductImg } from './components/productImg/ProductImg';
 import { useSelector } from 'react-redux/es/hooks/useSelector';
+import { initialCookie } from './app/shared/helpers/helpers';
 
 function App() {
   const cartLength = useSelector((state) => state.shoppingCart.orders).length;
@@ -11,6 +12,11 @@ function App() {
   useEffect(() => {
     setCounter(cartLength - 1);
   }, [cartLength]);
+  // Setting initial cookie
+  useEffect(() => {
+    initialCookie();
+  }, []);
+
   return (
     <React.Fragment>
       <main className='App'>
