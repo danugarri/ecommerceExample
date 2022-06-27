@@ -37,12 +37,3 @@ export const deleteCookie = () => {
   document.cookie = `ordersCounter=0;max-age=0`;
   document.cookie = 'orders=0;max-age=0';
 };
-
-//  LOCAL STORAGE
-// update localStorage
-export const updateLocalStorage = (newOrder) => {
-  // localStorage.clear();
-  // orders
-  const orders = JSON.parse(localStorage.getItem('orders'));
-  localStorage.setItem('orders', `${JSON.stringify([...orders, newOrder])}`);
-};

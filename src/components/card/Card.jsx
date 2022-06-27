@@ -18,7 +18,7 @@ export const Card = () => {
   const { code, name, stock } = fetchedData;
   const dispatch = useDispatch();
   const HandleClick = () => {
-    const formattedMessage = `Has añadido ${selectedQuantity} unidad/des de ${name} de la talla ${selectedSize} y color ${selectedColor}`;
+    const formattedMessage = `You have added ${selectedQuantity} unit/s of ${name} with the ${selectedSize} size and ${selectedColor} color`;
     if (!isFulfilled) {
       swal(formattedMessage, '', 'success');
       dispatch(shoppingCartAction(name, selectedQuantity, selectedColor, selectedSize));
